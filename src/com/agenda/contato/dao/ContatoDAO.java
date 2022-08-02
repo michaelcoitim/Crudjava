@@ -12,6 +12,8 @@ public class ContatoDAO {
 
     // metodo save é o create
     public void save(Agenda contato){
-
+        String sql = "INSERT INTO contato(nome, idade,dataCadastro) " +
+                      "VALUES(?,?,)";
     }
+
 }
