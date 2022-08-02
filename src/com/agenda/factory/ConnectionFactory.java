@@ -26,8 +26,14 @@ public class ConnectionFactory {
         return connection;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         // recupperação de conexao com o banco
+        Connection con =  createConnectionToMysql();
+
+        if(con != null){
+            System.out.println("Conectado com sucesso");
+            con.close();
+        }
     }
 }
