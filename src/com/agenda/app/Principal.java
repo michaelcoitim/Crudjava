@@ -18,6 +18,5 @@ public class Principal {
 
         //chamando metodo save e passando por parametro o contato criado.
         dao.save(contato);
-
     }
 }
