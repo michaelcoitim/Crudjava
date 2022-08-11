@@ -6,6 +6,9 @@ import com.agenda.model.Agenda;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
 * O dao é basicamente onde fica as regra s de negocio
@@ -39,7 +42,7 @@ public class ContatoDAO {
 
             //execultado a query
                 pstm.execute();
-            System.out.println("Contato salvo com sucesso");
+                System.out.println("Contato salvo com sucesso");
 
 
         } catch (Exception e) {
@@ -57,6 +60,30 @@ public class ContatoDAO {
                 e.printStackTrace();
             }
         }
+    }
+
+    public List<Agenda> listaContatos(){
+        // string de sql **SELECT***
+        String sql = "SELECT * FROM contato;";
+
+        //crinado conexão banco
+        Connection conn = null;
+
+        //utilizado para execultar consutas
+        PreparedStatement pstm = null;
+
+        // variavel guarda  informações vindas do banco, para ser "manipuladas" no java (pega o conjuto de resut set
+        // e coloca dentro de um array)
+        List<Agenda> contatos = new ArrayList<Agenda>();
+
+        // recupera os dados do banco
+        ResultSet rste = null;
+
+
+
+
+
+
     }
 
 }
