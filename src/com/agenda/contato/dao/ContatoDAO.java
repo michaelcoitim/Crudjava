@@ -147,6 +147,42 @@ public class ContatoDAO {
         Connection con = null;
         PreparedStatement ppst = null;
 
+        try {
+            // conexão banco
+            con = ConnectionFactory.createConnectionToMysql();
+
+            // classe que vai execultar a query
+            ppst = (PreparedStatement) con.prepareStatement(sql);
+
+            //primeiro parametro nome que vai no lugar da ?
+            ppst.setString(1 ,contato.getNome());
+
+            // idade
+            ppst.setInt(2,contato.getIdade());
+            // setado data
+            ppst.setDate(3,new Date(contato.getDataCadastro().getTime()));
+
+            // o id para ser atualizado
+            ppst.setInt(4,contato.getId());
+
+            // executando comando montado acima
+            ppst.execute();
+
+            System.out.println("contato "+contato.getId()+" atualizado");
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                if (con != null){
+                    con.close();
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
 
     }
 
