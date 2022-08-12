@@ -13,9 +13,9 @@ public class Principal {
         // crinado novo contato
         Agenda contato = new Agenda();
         contato.setNome("João Perreira");
-        contato.setIdade(85);
+        contato.setIdade(90);
         contato.setDataCadastro(new Date());
-        contato.setId(5);
+        //contato.setId(5);
 
 
         //chamando metodo save e passando por parametro o contato criado.
