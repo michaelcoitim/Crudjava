@@ -20,8 +20,12 @@ public class Principal {
 
         //chamando metodo save e passando por parametro o contato criado.
         //dao.save(contato);
-        dao.atualizaContato(contato);
 
+        // chamado atualiza contato
+        //dao.atualizaContato(contato);
+
+        // chamado o delete cotato
+        dao.deletaContatoById(5);
 
 
         // visualizando os dados do banco camando metodo listaContatos
