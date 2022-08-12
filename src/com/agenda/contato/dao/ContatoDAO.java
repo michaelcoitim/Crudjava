@@ -178,6 +178,9 @@ public class ContatoDAO {
                 if (con != null){
                     con.close();
                 }
+                if (ppst != null){
+                    ppst.close();
+                }
             }catch (Exception e){
                 e.printStackTrace();
             }
