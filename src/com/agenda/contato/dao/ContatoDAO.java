@@ -111,17 +111,33 @@ public class ContatoDAO {
 
                 contato.setDataCadastro(rste.getDate("dataCadastro"));
 
+                // adicionando contato na lista
+                contatos.add(contato);
+
             }
 
 
         }catch (Exception e){
+            e.printStackTrace();
 
+        }finally {
+            //finalizando conexões
+            try {
+                if(conn != null){
+                    conn.close();
+                }
+
+                if (pstm != null){
+                    pstm.close();
+                }
+                if (rste != null){
+                    rste.close();
+                }
+
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
-
-
-
-
-
 
     }
 
