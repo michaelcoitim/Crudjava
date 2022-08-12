@@ -12,12 +12,17 @@ public class Principal {
 
         // crinado novo contato
         Agenda contato = new Agenda();
-        contato.setNome("Paola");
-        contato.setIdade(16);
+        contato.setNome("João Perreira");
+        contato.setIdade(85);
         contato.setDataCadastro(new Date());
+        contato.setId(5);
+
 
         //chamando metodo save e passando por parametro o contato criado.
-       //dao.save(contato);
+        //dao.save(contato);
+        dao.atualizaContato(contato);
+
+
 
         // visualizando os dados do banco camando metodo listaContatos
         // é necesario um for  para percoree a lista criada no metodo
