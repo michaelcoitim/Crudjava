@@ -62,6 +62,13 @@ public class ContatoDAO {
         }
     }
 
+
+    /* esse metedo basicamente pegar os dados vindo do banco
+     * salva em uma variavel, por esse motivo parece que estamos gravando novamente esses dados porem
+     * só estamos listando essa variavel
+     */
+
+
     public List<Agenda> listaContatos(){
         // string de sql **SELECT***
         String sql = "SELECT * FROM contato;";
@@ -78,6 +85,38 @@ public class ContatoDAO {
 
         // recupera os dados do banco
         ResultSet rste = null;
+        try {
+            conn = ConnectionFactory.createConnectionToMysql();
+            pstm = (PreparedStatement) conn.prepareStatement(sql);
+
+            //a variavael rste está com um "array" do contatos vindo do banco
+            rste = pstm.executeQuery();
+
+            // percorendo lista vindo do banco
+            while (rste.next()){
+
+                // "criando um novo contato" para ser salvo na que é do tipo list
+                Agenda contato = new Agenda();
+
+                // recuperando id (grava a informação do id que esta vindo do banco  em contato)
+                contato.setId(rste.getInt("id"));
+
+                // recupenado nome
+                contato.setNome(rste.getString("nome"));
+
+                // recuperando idade
+                contato.setIdade(rste.getInt("idade"));
+
+                // recuperando data de cadastro
+
+                contato.setDataCadastro(rste.getDate("dataCadastro"));
+
+            }
+
+
+        }catch (Exception e){
+
+        }
 
 
 
