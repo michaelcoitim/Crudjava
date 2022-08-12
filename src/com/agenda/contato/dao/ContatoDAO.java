@@ -67,8 +67,6 @@ public class ContatoDAO {
      * salva em uma variavel, por esse motivo parece que estamos gravando novamente esses dados porem
      * só estamos listando essa variavel
      */
-
-
     public List<Agenda> listaContatos(){
         // string de sql **SELECT***
         String sql = "SELECT * FROM contato;";
@@ -138,6 +136,8 @@ public class ContatoDAO {
                 e.printStackTrace();
             }
         }
+        return contatos;
+
 
     }
 

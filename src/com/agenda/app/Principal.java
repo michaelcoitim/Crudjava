@@ -17,6 +17,15 @@ public class Principal {
         contato.setDataCadastro(new Date());
 
         //chamando metodo save e passando por parametro o contato criado.
-        dao.save(contato);
+       //dao.save(contato);
+
+        // visualizando os dados do banco camando metodo listaContatos
+        // é necesario um for  para percoree a lista criada no metodo
+
+        for(Agenda c : dao.listaContatos()){
+            System.out.println("Nome "+ c.getNome()+ ", Idade "+c.getIdade()+" anos, salvo em "+c.getDataCadastro());
+        }
+
+
     }
 }
