@@ -142,8 +142,7 @@ public class ContatoDAO {
     }
 
     public void atualizaContato(Agenda contato){
-        String sql ="UPDATE FROM contato SET nome = ? , idade = ? , datacadastro = ? " +
-                "where id = ?";
+        String sql ="UPDATE  contato SET nome = ? , idade = ? , dataCadastro = ? WHERE id = ? ";
         Connection con = null;
         PreparedStatement ppst = null;
 
